@@ -1,0 +1,6 @@
+__MACOSX
+.DS_Store
+Thumb.db
+.idea
+npm-debug.log
+
