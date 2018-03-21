@@ -86,13 +86,7 @@ npm install
 ```
 
 
-2.执行dll公共库打包命令，开启服务,默认端口8080，通过[http://127.0.0.1:8080](http://127.0.0.1:8080/)访问
-
-```
-npm run build:dll && npm run dev
-
-
-//默认端口8080，可通过配置参数port来更改端口   npm run dev -- --port 8081
+2.//默认端口3333，可通过配置参数port来更改端口   npm run dev -- --port 8081
 ```
 
 3.生产环境打包

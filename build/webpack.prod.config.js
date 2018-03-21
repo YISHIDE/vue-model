@@ -43,13 +43,13 @@ module.exports = merge(webpackBaseConfig, {
         comments: false
       }
     }),
-    new CopyWebpackPlugin([
-      {
-        from: path.resolve(__dirname, '../static'),
-        to: path.resolve(__dirname, '../dist/static'),
-        ignore: ['.*']
-      }
-    ]),
+    // new CopyWebpackPlugin([
+    //   {
+    //     from: path.resolve(__dirname, '../static'),
+    //     to: path.resolve(__dirname, '../dist/static'),
+    //     ignore: ['.*']
+    //   }
+    // ]),
     new HtmlWebpackPlugin({
       filename: './index.html',
       template: path.join(__dirname, '../', 'src/template/index.ejs'),
