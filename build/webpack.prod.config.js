@@ -18,7 +18,7 @@ process.env.NODE_ENV = '"production"';
 module.exports = merge(webpackBaseConfig, {
   entry: {
     main: './src/main',
-    vendor: ['vue','vue-router','axios']
+    vendors: ['vue','vue-router','axios']
   },
   output: {
     path: path.join(__dirname, '../dist'),
@@ -30,6 +30,8 @@ module.exports = merge(webpackBaseConfig, {
   plugins: [
     new webpack.DefinePlugin({
       'process.env.NODE_ENV': process.env.NODE_ENV,
+        'process.env.PROJECT' : require('./config').PROJECT,
+        'globalConfigs':require('./config')
     }),
     new webpack.optimize.UglifyJsPlugin({
       compress: {
@@ -60,17 +62,17 @@ module.exports = merge(webpackBaseConfig, {
 
     // new ExtractTextPlugin({filename: 'css/[name].css',  allChunks: true}),
 
-    function () {
-      this.plugin("done", function (stats) {
-        var buildConfig = path.join(__dirname, '../dist/js/config.' + stats.hash + '.js')
-        fs.open(buildConfig, 'w', function (err, fd) {
-          var buf = `window.globalConfigs = ${JSON.stringify(utils.resolve(require('./config')), null, 4)}`;
-          console.log(buf)
-          fs.writeSync(fd, buf, 0, buf.length, 0);
-          utils.after('./dist', stats.compilation.assets, stats.hash)
-        });
-      })
-    }
+    // function () {
+    //   this.plugin("done", function (stats) {
+    //     var buildConfig = path.join(__dirname, '../dist/js/config.' + stats.hash + '.js')
+    //     fs.open(buildConfig, 'w', function (err, fd) {
+    //       var buf = `window.globalConfigs = ${JSON.stringify(utils.resolve(require('./config')), null, 4)}`;
+    //       console.log(buf)
+    //       fs.writeSync(fd, buf, 0, buf.length, 0);
+    //       utils.after('./dist', stats.compilation.assets, stats.hash)
+    //     });
+    //   })
+    // }
   ]
 });
 
