@@ -7,7 +7,8 @@ var merge = require('webpack-merge');
 // var ExtractTextPlugin = require('extract-text-webpack-plugin');
 var HtmlWebpackPlugin = require('html-webpack-plugin');
 var webpackBaseConfig = require('./webpack.base.config.js');
-var CopyWebpackPlugin = require('copy-webpack-plugin')
+var CopyWebpackPlugin = require('copy-webpack-plugin');
+var CleanWebpackPlugin=require("clean-webpack-plugin");
 var fs = require('fs');
 var utils = require('./utils')
 
@@ -57,8 +58,9 @@ module.exports = merge(webpackBaseConfig, {
       hash: false
     }),
     new webpack.optimize.CommonsChunkPlugin({name: 'vendors', filename: 'js/vendor.bundle.[hash].js'}),
-
-
+      new CleanWebpackPlugin(['dist/js/*.js','dist/chunk/*.js'],{
+          root:__dirname
+      })
 
     // new ExtractTextPlugin({filename: 'css/[name].css',  allChunks: true}),
 
