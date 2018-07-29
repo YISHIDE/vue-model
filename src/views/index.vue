@@ -1,12 +1,7 @@
-
-
-<template>
-  <div class="a"></div>
-</template>
 <script>
 
     export default {
-
+        name:"index",
         filters: {},
         directives: {},
         components: {
@@ -25,7 +20,9 @@
 
         },
         methods: {
-
+            jump(name){
+                this.$router.push({name});
+            }
         }
     }
 </script>

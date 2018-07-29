@@ -1,6 +1,7 @@
 
 <style rel="stylesheet/less" lang="less">
     // @import '../styles/common.css';
+    @import "../styles/animation.less";
     @import '../styles/index';
     @import '../asset/css/1px.css';
     @import '../asset/css/reset.css';
@@ -15,7 +16,7 @@
 </style>
 <template>
     <div>
-        <transition :name="direction" mode="in-out">
+        <transition :name="direction">
             <keep-alive :include="includedComponents">
                 <router-view   class="page"></router-view>
             </keep-alive>
@@ -40,19 +41,14 @@
         watch:{
             $route(to,from){
 
-                let toDepth = to.path.split('/').length;
-                let fromDepth = from.path.split('/').length;
-
-                if (toDepth == fromDepth) {
-//                    this.direction = 'vlc-ani-fade'
-                } else if(toDepth > fromDepth) {
-                    this.direction = 'vlc-ani-slide-right';
-                } else if (toDepth < fromDepth) {
-
-                    this.direction = 'vlc-ani-slide-left'
-                } else {
-                    this.direction = '';
-
+                var fd = from.meta.depth || 0;
+                var td = to.meta.depth || 0;
+                if ( fd === td) {
+                    this.direction = 'vlc-ani-fade';
+                } else if (fd < td) {
+                    this.direction = 'vlc-ani-slide-right1';
+                } else if (fd > td) {
+                    this.direction = 'vlc-ani-slide-left1'
                 }
 //        // 取野练的openid
 //        if (env.isWechat && to.name !== 'login-quick') {

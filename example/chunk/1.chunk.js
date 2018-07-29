@@ -1,18 +1,18 @@
-webpackJsonp([0],{
+webpackJsonp([1],{
 
-/***/ 105:
+/***/ 106:
 /***/ (function(module, exports, __webpack_require__) {
 
 var disposed = false
 function injectStyle (ssrContext) {
   if (disposed) return
-  __webpack_require__(118)
+  __webpack_require__(119)
 }
 var Component = __webpack_require__(44)(
   /* script */
-  __webpack_require__(111),
+  __webpack_require__(112),
   /* template */
-  __webpack_require__(113),
+  __webpack_require__(114),
   /* styles */
   injectStyle,
   /* scopeId */
@@ -20,9 +20,9 @@ var Component = __webpack_require__(44)(
   /* moduleIdentifier (server only) */
   null
 )
-Component.options.__file = "/Users/yishide/Desktop/vue架构/vue-model/src/project/bases/page/index/index.vue"
+Component.options.__file = "/Users/yishide/Desktop/vue架构/vue-model/src/project/bases/page/index/main.vue"
 if (Component.esModule && Object.keys(Component.esModule).some(function (key) {return key !== "default" && key.substr(0, 2) !== "__"})) {console.error("named exports are not supported in *.vue files.")}
-if (Component.options.functional) {console.error("[vue-loader] index.vue: functional components are not supported with templates, they should use render functions.")}
+if (Component.options.functional) {console.error("[vue-loader] main.vue: functional components are not supported with templates, they should use render functions.")}
 
 /* hot reload */
 if (false) {(function () {
@@ -31,9 +31,9 @@ if (false) {(function () {
   if (!hotAPI.compatible) return
   module.hot.accept()
   if (!module.hot.data) {
-    hotAPI.createRecord("data-v-58f64d44", Component.options)
+    hotAPI.createRecord("data-v-7329ce5d", Component.options)
   } else {
-    hotAPI.reload("data-v-58f64d44", Component.options)
+    hotAPI.reload("data-v-7329ce5d", Component.options)
   }
   module.hot.dispose(function (data) {
     disposed = true
@@ -114,14 +114,7 @@ module.exports = Component.exports
 
 /***/ }),
 
-/***/ 110:
-/***/ (function(module, exports, __webpack_require__) {
-
-module.exports = __webpack_require__.p + "img/a.b5d7bbd20141f85db75ece83cedda484.jpg";
-
-/***/ }),
-
-/***/ 111:
+/***/ 112:
 /***/ (function(module, exports, __webpack_require__) {
 
 "use strict";
@@ -150,7 +143,7 @@ exports.default = {
 
 /***/ }),
 
-/***/ 113:
+/***/ 114:
 /***/ (function(module, exports, __webpack_require__) {
 
 "use strict";
@@ -170,11 +163,7 @@ module.exports = { render: function render() {
         "bottom": "0",
         "background": "#fff"
       }
-    }, [_c('img', {
-      attrs: {
-        "src": __webpack_require__(110)
-      }
-    }), _vm._v(" "), _c('div', {
+    }, [_vm._v("\n    这是主页\n    "), _c('div', {
       staticClass: "test "
     })]);
   }] };
@@ -182,68 +171,44 @@ module.exports.render._withStripped = true;
 if (false) {
   module.hot.accept();
   if (module.hot.data) {
-    require("vue-loader/node_modules/vue-hot-reload-api").rerender("data-v-58f64d44", module.exports);
+    require("vue-loader/node_modules/vue-hot-reload-api").rerender("data-v-7329ce5d", module.exports);
   }
 }
 
 /***/ }),
 
-/***/ 115:
+/***/ 116:
 /***/ (function(module, exports, __webpack_require__) {
 
-var escape = __webpack_require__(117);
 exports = module.exports = __webpack_require__(11)(false);
 // imports
 
 
 // module
-exports.push([module.i, "\n.a {\n  color: red;\n}\n.test {\n  background: url(" + escape(__webpack_require__(110)) + ");\n  width: 200px;\n  height: 200px;\n  -ms-transform: rotate(90deg);\n      transform: rotate(90deg);\n}\n", ""]);
+exports.push([module.i, "\n.a {\n  color: red;\n}\n.test {\n  /*background: url(\"../../../../asset/img/a.jpg\");*/\n  /*width: 200px;*/\n  /*height: 200px;*/\n  /*transform: rotate(90deg);*/\n}\n", ""]);
 
 // exports
 
 
 /***/ }),
 
-/***/ 117:
-/***/ (function(module, exports) {
-
-module.exports = function escape(url) {
-    if (typeof url !== 'string') {
-        return url
-    }
-    // If url is already wrapped in quotes, remove them
-    if (/^['"].*['"]$/.test(url)) {
-        url = url.slice(1, -1);
-    }
-    // Should url be wrapped?
-    // See https://drafts.csswg.org/css-values-3/#urls
-    if (/["'() \t\n]/.test(url)) {
-        return '"' + url.replace(/"/g, '\\"').replace(/\n/g, '\\n') + '"'
-    }
-
-    return url
-}
-
-
-/***/ }),
-
-/***/ 118:
+/***/ 119:
 /***/ (function(module, exports, __webpack_require__) {
 
 // style-loader: Adds some css to the DOM by adding a <style> tag
 
 // load the styles
-var content = __webpack_require__(115);
+var content = __webpack_require__(116);
 if(typeof content === 'string') content = [[module.i, content, '']];
 if(content.locals) module.exports = content.locals;
 // add the styles to the DOM
-var update = __webpack_require__(45)("6a84b8ef", content, false);
+var update = __webpack_require__(45)("b336d46a", content, false);
 // Hot Module Replacement
 if(false) {
  // When the styles change, update the <style> tags
  if(!content.locals) {
-   module.hot.accept("!!../../../../../node_modules/css-loader/index.js!../../../../../node_modules/vue-loader/lib/style-compiler/index.js?{\"vue\":true,\"id\":\"data-v-58f64d44\",\"scoped\":false,\"hasInlineConfig\":false}!../../../../../node_modules/autoprefixer-loader/index.js?browsers=last 5 versions!../../../../../node_modules/less-loader/index.js!../../../../../node_modules/vue-loader/lib/selector.js?type=styles&index=0!./index.vue", function() {
-     var newContent = require("!!../../../../../node_modules/css-loader/index.js!../../../../../node_modules/vue-loader/lib/style-compiler/index.js?{\"vue\":true,\"id\":\"data-v-58f64d44\",\"scoped\":false,\"hasInlineConfig\":false}!../../../../../node_modules/autoprefixer-loader/index.js?browsers=last 5 versions!../../../../../node_modules/less-loader/index.js!../../../../../node_modules/vue-loader/lib/selector.js?type=styles&index=0!./index.vue");
+   module.hot.accept("!!../../../../../node_modules/css-loader/index.js!../../../../../node_modules/vue-loader/lib/style-compiler/index.js?{\"vue\":true,\"id\":\"data-v-7329ce5d\",\"scoped\":false,\"hasInlineConfig\":false}!../../../../../node_modules/autoprefixer-loader/index.js?browsers=last 5 versions!../../../../../node_modules/less-loader/index.js!../../../../../node_modules/vue-loader/lib/selector.js?type=styles&index=0!./main.vue", function() {
+     var newContent = require("!!../../../../../node_modules/css-loader/index.js!../../../../../node_modules/vue-loader/lib/style-compiler/index.js?{\"vue\":true,\"id\":\"data-v-7329ce5d\",\"scoped\":false,\"hasInlineConfig\":false}!../../../../../node_modules/autoprefixer-loader/index.js?browsers=last 5 versions!../../../../../node_modules/less-loader/index.js!../../../../../node_modules/vue-loader/lib/selector.js?type=styles&index=0!./main.vue");
      if(typeof newContent === 'string') newContent = [[module.id, newContent, '']];
      update(newContent);
    });

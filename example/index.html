@@ -8,9 +8,26 @@
 </head>
 <body>
     <div id="app"></div>
-    <script type="text/javascript" src="./js/config.js"></script>
-    <!--<script type="text/javascript" src="js/vendor.bundle.js"></script>-->
-    <!--<script type="text/javascript" src="js/main.js"></script>-->
+    <!--<script type="text/javascript" src="./js/config.js"></script>-->
+    <script>
+//        解决ios safari浏览器双指放大问题
+        window.onload=function () {
+            document.addEventListener('touchstart',function (event) {
+                if(event.touches.length>1){
+                    event.preventDefault();
+                }
+            })
+            var lastTouchEnd=0;
+            document.addEventListener('touchend',function (event) {
+                var now=(new Date()).getTime();
+                if(now-lastTouchEnd<=300){
+                    event.preventDefault();
+                }
+                lastTouchEnd=now;
+            },false)
+        }
+
+    </script>
 <script type="text/javascript" src="js/vendor.bundle.js"></script><script type="text/javascript" src="js/main.js"></script></body>
 
 </html>
