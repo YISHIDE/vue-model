@@ -54,7 +54,7 @@ module.exports = merge(webpackBaseConfig, {
     new HtmlWebpackPlugin({
       filename: './index.html',
       template: path.join(__dirname, '../', 'src/template/index.ejs'),
-      inject: false,
+      inject: true,
       hash: false
     }),
     new webpack.optimize.CommonsChunkPlugin({name: 'vendors', filename: 'js/vendor.bundle.[hash].js'}),
